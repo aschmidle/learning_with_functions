@@ -1,0 +1,25 @@
+"""
+This program takes in 3 arguments to help determine how much each person in a party owes
+for a bill with the tip included. It takes in the argumnets bill_total, tip_percent, and num_in_party
+as user input and returns the amount owed by each party as a return.
+"""
+
+def calculate_tip(bill_total, tip_percent, num_in_party):
+    full_amount = bill_total + (bill_total * (tip_percent/100))
+    amount_per_person = full_amount/num_in_party
+    return round(amount_per_person, 2)
+    
+bill_total = float(input("Enter the total amount of the bill: $"))
+tip_percent = float(input("Enter the percent tip you'd like to include: "))
+num_in_party = int(input("Enter the number of people in your party: "))
+
+if bill_total < 0 or tip_percent < 0 or num_in_party < 1:
+    print(f"Invalid entry. Make sure:")
+    if bill_total < 0:
+        print(f"- Bill total must be greater than 0.")
+    if tip_percent < 0:
+        print(f"- Tip percent must be greater than 0.")
+    if num_in_party <= 0 :
+        print(f"- Number in party must be greater than 0.")
+else:
+    print(f"The amount owed by each person after tip is included is ${calculate_tip(bill_total, tip_percent, num_in_party)}")
