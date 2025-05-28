@@ -1,0 +1,27 @@
+"""
+This program uses a function called calculate_final_price that takes in the arguments price, discount, and tax as user input
+and calculates the final cost of an item.
+"""
+
+def calculate_final_price(price, discount, tax):
+    discounted_price = price - (price * (discount/100))
+    final_price = discounted_price + (discounted_price * (tax/100))
+    return round(final_price, 2)
+
+price = float(input("Enter price of item: "))
+discount = float(input("Enter discount amount: "))
+tax = float(input("Enter the amount of tax: "))
+
+
+if price <= 0 or discount < 0 or tax <= 0:
+    print("All entries must be greater than 0")
+    if price <= 0:
+        print("Price must be greater than 0.")
+    if discount < 0:
+        print("Discount must be greater than 0.")
+    if tax < 0:
+        print("Tax must be greater than 0.")
+elif:
+    print(calculate_final_price(price, discount, tax))
+else:
+  print("Invalid Entry or Entries")
