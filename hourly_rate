@@ -1,0 +1,30 @@
+"""
+This program has two functions. One to calculate an hourly rate as taken from user input as hours worked and
+rate per hour. The other function calculates the over time rate. Lastly, a if/else statement is used to determined the hours worked
+and to call the ot_pay if hours worked exceeds 40 hours a week and the reg_pay if the hours are less than 40 hours.
+"""
+
+# Function to calculate regular rate of pay
+def reg_pay(hrs, rate):
+    return hrs * rate
+
+# Function to calculate the overtime rate
+def ot_pay(hrs, rate):
+    pot = hrs * rate
+    ot = (hrs - 40) * (rate * .5)
+    return pot + ot
+
+# User input for for hours worked and rate
+hrs = float(input("Enter hours worked: "))
+rate = float(input("Enter rate: "))
+
+
+try:
+# Check to see if hours are more than 40 per week
+    if hrs > 40:
+      print(f"Pay {ot_pay(hrs, rate)}") 
+# 
+    else: 
+        print(f"Pay {reg_pay(hrs, rate)}")
+except:
+    print("Error")
